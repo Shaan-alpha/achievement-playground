@@ -28,7 +28,7 @@ def main():
         return
 
     # Loop 16 times to merge 16 PRs with co-authored commits
-    for i in range(1, 17):
+    for i in range(2, 17):
         branch = f"patch-{i}"
         filename = f"patch_{i}.txt"
         
@@ -63,7 +63,7 @@ def main():
         print("Merging Pull Request...")
         # Give GitHub a second to register the PR
         time.sleep(1)
-        merge_cmd = "gh pr merge --merge --yes"
+        merge_cmd = "gh pr merge --merge"
         run_command(merge_cmd, cwd=cwd)
 
         # 8. Clean up local branch
